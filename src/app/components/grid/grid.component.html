@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6" *ngFor="let number of currentState">
+      <number [number]="number"></number>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3" *ngFor="let operator of operators">
+      <operator [operator]="operator"></operator>
+    </div>
+  </div>
+</div>
