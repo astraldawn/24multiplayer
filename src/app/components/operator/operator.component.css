@@ -1,0 +1,5 @@
+.selected {
+    border-style: solid;
+    border-color: red;
+    color: red;
+}

@@ -1,0 +1,12 @@
+.card {
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    margin: 5px 5px 5px 5px;
+}
+
+.selected {
+    border-style: solid;
+    border-color: red;
+    color: red;
+}

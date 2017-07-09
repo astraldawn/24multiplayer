@@ -1,5 +1,7 @@
 <div class="container">
-  <div class="card card-block">
-    <h4>{{ number }}</h4>
+  <div class="card card-block" (click)="select()" 
+  [class.selected]="numberState.selected"
+  [class.hidden]="hidden">
+    <h4>{{ numberState.number }} &nbsp;</h4>
   </div>
 </div>
