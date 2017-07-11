@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import { MdSnackBarModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { NumberComponent } from './components/number/number.component';
@@ -11,6 +13,7 @@ import { GridComponent } from './components/grid/grid.component';
 import { SolverService } from './services/solver.service';
 import { GameService } from './services/game.service';
 import { OperatorComponent } from './components/operator/operator.component';
+import { NotificationComponent } from './components/notification/notification.component';
 
 const ROUTES = [
   {
@@ -29,13 +32,16 @@ const ROUTES = [
     AppComponent,
     NumberComponent,
     GridComponent,
-    OperatorComponent
+    OperatorComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    MdSnackBarModule,
+    BrowserAnimationsModule
   ],
   providers: [GameService, SolverService],
   bootstrap: [AppComponent]

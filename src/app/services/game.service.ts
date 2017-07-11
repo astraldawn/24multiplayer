@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { NumberState } from '../classes/number-state';
+import { Notification } from '../classes/notification'
 
 import { CONSTANTS } from '../constants';
 
@@ -17,10 +18,12 @@ export class GameService {
   // Observable sources 
   private gameStateSource = new Subject<NumberState[]>();
   private operatorSource = new Subject<string>();
+  private notificationSource = new Subject<Notification>();
 
   // Observable streams
   gameState$ = this.gameStateSource.asObservable();
   operator$ = this.operatorSource.asObservable();
+  notification$ = this.notificationSource.asObservable();
 
   constructor() {
     this.currentNumbers = this.initialNumbers;
@@ -93,6 +96,7 @@ export class GameService {
     }
 
     // Update state
+    this.notificationSource.next(new Notification(1, "Number selected"));
     this.updateGameState()
 
   }
